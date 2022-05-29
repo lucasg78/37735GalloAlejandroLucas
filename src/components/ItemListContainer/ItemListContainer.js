@@ -1,22 +1,18 @@
-import { Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./ItemListContainer.scss";
+import { ItemCount } from "./ItemCount";
 
-export const ItemListContainer = (props) => {
-    const { productos, add2Cart, resetCart} = props;
+export const ItemListContainer = () => {
+
     return (
-        <section className="container my-5">
-            <h2 className="titulo">Nuestros productos</h2>
-            <hr />
+        <section>
+            <div>
 
-            {productos?.length > 0 &&
-                productos.map((producto, index) => (
-                    <div className="producto" key={index}>
-                        <p> {producto.name} {producto.tipe} <br></br> <strong>{producto.price}</strong></p>
-                        <Button onClick={() => add2Cart(1)}>+</Button>
-                        <Button onClick={() => add2Cart(-1)}>-</Button>
-                        <Button onClick={() => resetCart()}>Vaciar</Button>
-                    </div>
-                ))}
+                <ItemCount stock={5} initial={1}/>
+
+            </div>
         </section>
-    );
-};
+    )
+}
+
+

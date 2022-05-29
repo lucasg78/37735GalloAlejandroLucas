@@ -1,6 +1,5 @@
 import './Navbar.scss'
 import { CartWidget } from "../CartWidget/CartWidget";
-import User from "../User/User";
 
 export const Navbar = (props) => {
     const { itemsCart } = props;
@@ -10,10 +9,9 @@ export const Navbar = (props) => {
                 <h1 className="header__logo">Ahumadero Ushuaia</h1>
 
                 <nav className="header__navbar">
-                    <p className="header__navlink">Enlace 1</p>
-                    <p className="header__navlink">Enlace 2</p>
-                    <p className="header__navlink">Enlace 3</p>
-                    <User />
+                    <p className="header__navlink">Conservas</p>
+                    <p className="header__navlink">Picadas</p>
+                    <p className="header__navlink">Pescado</p>
                     <CartWidget itemsCart={itemsCart} />
                 </nav>
             </div>
