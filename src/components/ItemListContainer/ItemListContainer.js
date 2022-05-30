@@ -1,16 +1,42 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from "react"
+import { Spinner } from "react-bootstrap"
+import { pedirDatos } from "../../mock/pedirDatos"
+import ItemList from "./ItemList"
 import "./ItemListContainer.scss";
-import { ItemCount } from "./ItemCount";
 
 export const ItemListContainer = () => {
 
+    const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        setLoading(true)
+
+        pedirDatos()
+            .then((resp) => {
+                setItems( resp )
+            })
+            .catch((error) => {
+                console.log('ERROR', error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [])
+
     return (
         <section>
-            <div>
+            
+            {
+                loading
+                ?   <Spinner animation="grow" variant="secondary" className="spinner">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
 
-                <ItemCount stock={5} initial={1}/>
-
-            </div>
+                :  <ItemList items={items}/> 
+            }
+            
         </section>
     )
 }

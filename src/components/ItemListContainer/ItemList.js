@@ -1,12 +1,11 @@
-import Item from "../Item/Item"
-
-
+import './ItemList.scss'
+import Item from "./Item"
 
 const ItemList = ( {items} ) => {
 
     return (
         <div>
-            <h2>Nuestro productos</h2>
+            <h2 className="tituloTienda">Conservas</h2>
             <hr/>
 
             {

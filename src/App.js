@@ -4,19 +4,10 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 
 function App() {
 
-  const productos = [
-    {
-      id: "1",
-      name: "Centolla",
-      tipe: "natural",
-      price: "$1.200",
-    },
-  ];
-
   return (
     <div>
       <Navbar />
-      <ItemListContainer productos={productos} />
+      <ItemListContainer />
     </div>
   );
 }

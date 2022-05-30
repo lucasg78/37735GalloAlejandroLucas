@@ -12,7 +12,7 @@ export const Navbar = (props) => {
                     <p className="header__navlink">Conservas</p>
                     <p className="header__navlink">Picadas</p>
                     <p className="header__navlink">Pescado</p>
-                    <CartWidget itemsCart={itemsCart} />
+                    <CartWidget itemsCart={itemsCart} className="cart"/>
                 </nav>
             </div>
         </header>
