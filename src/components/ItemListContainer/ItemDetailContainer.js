@@ -1,21 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import ItemDetail from "./ItemDetail";
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import { pedirDatos } from "../../mock/pedirDatos";
-import ItemList from "./ItemList";
-import "./ItemListContainer.scss";
+import { getItem } from "../../mock/pedirDatos";
 
-
-export const ItemListContainer = ({ setProd }) => {
+export const ItemDetailContainer = ({ item }) => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true);
 
-        pedirDatos()
+        getItem(item.id)
             .then((resp) => {
+                console.log(resp);
                 setItems(resp);
+                console.log(items);
             })
             .catch((error) => {
                 console.log("ERROR", error);
@@ -32,10 +32,10 @@ export const ItemListContainer = ({ setProd }) => {
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
             ) : (
-                <ItemList items={items} setProd={setProd}></ItemList>
+                <ItemDetail items={items} />
             )}
         </section>
     );
 };
 
-
+export default ItemDetailContainer;
