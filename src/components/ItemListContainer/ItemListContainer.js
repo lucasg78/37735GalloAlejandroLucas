@@ -4,18 +4,30 @@ import { Spinner } from "react-bootstrap";
 import { pedirDatos } from "../../mock/pedirDatos";
 import ItemList from "./ItemList";
 import "./ItemListContainer.scss";
-
-
-export const ItemListContainer = ({ setProd }) => {
+import { useParams } from "react-router-dom";
+function capitalize(word) {
+    const lower = word.toLowerCase();
+    return word.charAt(0).toUpperCase() + lower.slice(1);
+}
+export const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [title, setTitle] = useState("Tienda");
+    const { idCategory } = useParams();
+    console.log(idCategory);
 
     useEffect(() => {
         setLoading(true);
 
         pedirDatos()
             .then((resp) => {
-                setItems(resp);
+                if (!idCategory) {
+                    setTitle("Tienda");
+                    setItems(resp);
+                } else {
+                    setItems(resp.filter((item) => item.category === idCategory));
+                    setTitle(capitalize(idCategory));
+                }
             })
             .catch((error) => {
                 console.log("ERROR", error);
@@ -23,7 +35,7 @@ export const ItemListContainer = ({ setProd }) => {
             .finally(() => {
                 setLoading(false);
             });
-    }, []);
+    }, [idCategory]);
 
     return (
         <section>
@@ -32,7 +44,7 @@ export const ItemListContainer = ({ setProd }) => {
                     <span className="visually-hidden">Loading...</span>
                 </Spinner>
             ) : (
-                <ItemList items={items} setProd={setProd}></ItemList>
+                <ItemList titulo={title} items={items} />
             )}
         </section>
     );

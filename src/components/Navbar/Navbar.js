@@ -1,17 +1,23 @@
 import './Navbar.scss'
 import { CartWidget } from "../CartWidget/CartWidget";
+import { Link } from 'react-router-dom'
 
 export const Navbar = (props) => {
     const { itemsCart } = props;
     return (
         <header className="header">
             <div className="header__container">
-                <h1 className="header__logo">Ahumadero Ushuaia</h1>
-
+                <Link to={"/"} className="link"><h1 className="header__logo">Ahumadero Ushuaia</h1></Link>
                 <nav className="header__navbar">
-                    <p className="header__navlink">Conservas</p>
-                    <p className="header__navlink">Picadas</p>
-                    <p className="header__navlink">Pescado</p>
+                    <Link to={"/category/conservas"} className="link">
+                        <p className="header__navlink">Conservas</p>
+                    </Link>
+                    <Link to={"/category/picadas"} className="link">
+                        <p className="header__navlink">Picadas</p>
+                    </Link>
+                    <Link to={"/category/congelados"} className="link">
+                        <p className="header__navlink">Congelados</p>
+                    </Link>
                     <CartWidget itemsCart={itemsCart} className="cart"/>
                 </nav>
             </div>

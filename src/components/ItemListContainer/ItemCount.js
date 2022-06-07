@@ -20,13 +20,14 @@ export const ItemCount = ({ stock, initial }) => {
 
     return (
         <div className="container">
+            <div className="stock">Stock {stock} unidades</div>
             <div className="controles">
                 <button className="button1" onClick={incrementar}>+</button>
                 <button className="buttonCounter">{counter}</button>
                 <button className="button2" onClick={decrementar}>-</button>
             </div>
             <button className="carrito">Agregar al carrito</button>
-            <div className="stock">Stock {stock} unidades</div>
+
         </div>
     );
 }

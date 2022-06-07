@@ -1,41 +1,46 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from "react"
+import { Spinner } from "react-bootstrap"
+import { pedirDatos } from "../../mock/pedirDatos"
+import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail";
-import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
-import { getItem } from "../../mock/pedirDatos";
 
-export const ItemDetailContainer = ({ item }) => {
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
+export const ItemDetailContainer = () => {
+
+    const [item, setItem] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    const { itemId } = useParams()
+    console.log(itemId)
+    console.log(item)
 
     useEffect(() => {
-        setLoading(true);
+        setLoading(true)
 
-        getItem(item.id)
+        pedirDatos()
             .then((resp) => {
-                console.log(resp);
-                setItems(resp);
-                console.log(items);
+                setItem(resp.find((item) => item.id === Number(itemId)))
             })
             .catch((error) => {
-                console.log("ERROR", error);
+                console.log('ERROR', error)
             })
             .finally(() => {
-                setLoading(false);
-            });
-    }, []);
+                setLoading(false)
+            })
+    }, [])
 
     return (
         <section>
-            {loading ? (
-                <Spinner animation="grow" variant="secondary" className="spinner">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
-            ) : (
-                <ItemDetail items={items} />
-            )}
-        </section>
-    );
-};
 
-export default ItemDetailContainer;
+            {
+                loading
+                    ? <Spinner animation="grow" variant="secondary" className="spinner">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+
+                    : <ItemDetail item={item} />
+            }
+
+        </section>
+    )
+}

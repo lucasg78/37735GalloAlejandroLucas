@@ -1,27 +1,23 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from "./components/Navbar/Navbar";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import { ItemDetailContainer } from "./components/ItemListContainer/ItemDetailContainer";
-import { useState } from "react";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import Footer from './components/Footer/Footer';
+import { ItemDetailContainer } from './components/ItemListContainer/ItemDetailContainer';
 
 function App() {
-  const [item, setItem] = useState(0);
-  const setProd = (prod) => {
-    console.log(prod);
-    setItem(prod);
-    console.log(item);
-  };
-  return (
-    <div>
-      <Navbar />
 
-      {item ? (
-        <ItemDetailContainer item={item} />
-      ) : (
-        <ItemListContainer
-          setProd={setProd}
-        />
-      )}
-    </div>
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<ItemListContainer />} />
+        <Route path='/category/:idCategory' element={<ItemListContainer />} />
+        <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+        <Route path='*' element={<Navigate to={"/"} />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

@@ -62,10 +62,9 @@
 .stock {
     width: 100%;
     text-align: center;
-    margin-top:10px;
+    margin-bottom:10px;
     color: black;
     font-size: 13px;
-    font-weight: bold;
     border: none;
 }
 
@@ -85,6 +84,7 @@
 
 .carrito:hover {
     color: blue;
+    background-color:white;
     font-size: 13px;
     cursor: pointer;
 }

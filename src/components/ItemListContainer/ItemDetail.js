@@ -1,18 +1,27 @@
 import { Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { ItemCount } from "./ItemCount";
 import './ItemDetail.scss'
 
-const ItemDetail = ({ items }) => {
+const ItemDetail = ({ item }) => {
+    const navigate = useNavigate();
+
+    const handleVolver = () => {
+        navigate(-1);
+    };
+
     return (
         <Card style={{ width: "18rem" }} className="itemDetail">
-            <Card.Img variant="top" src={items.img} className="img"/>
-            <Card.Body>
-                <Card.Title className="itemDetailName">{items.name}</Card.Title>
-                <Card.Text className="itemDetailDesc">{items.desc}</Card.Text>
-                <Card.Text className="itemDetailSize">{items.size}</Card.Text>
-                <Card.Text className="itemDetailPrice">${items.price}</Card.Text>
+            <Card.Img variant="top" src={item.img} className="img" />
+            <Card.Body className="itemCard">
+                <Card.Title className="itemDetailName">{item.name}</Card.Title>
+                <Card.Text className="itemDetailDesc">{item.desc}</Card.Text>
+                <Card.Text className="itemDetailSize">{item.size}</Card.Text>
+                <Card.Text className="itemDetailPrice">${item.price}</Card.Text>
             </Card.Body>
-            <ItemCount stock={items.stock} initial={1} />
+            <ItemCount initial={0} stock={item.stock} />
+            <Button variant="secondary" size="sm" className="btnVolver" onClick={handleVolver}>VOLVER</Button>
         </Card>
     );
 };
