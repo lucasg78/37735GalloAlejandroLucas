@@ -5,6 +5,7 @@ import { pedirDatos } from "../../mock/pedirDatos";
 import ItemList from "./ItemList";
 import "./ItemListContainer.scss";
 import { useParams } from "react-router-dom";
+
 function capitalize(word) {
     const lower = word.toLowerCase();
     return word.charAt(0).toUpperCase() + lower.slice(1);

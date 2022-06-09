@@ -1,8 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react"
 import './ItemCount.scss'
+import { Button } from "react-bootstrap"
 
-export const ItemCount = ({ stock, initial }) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [counter, setCounter] = useState(initial);
 
@@ -18,6 +19,10 @@ export const ItemCount = ({ stock, initial }) => {
         }
     }
 
+    const onAddToCart = () => {
+        onAdd(counter)
+    }
+
     return (
         <div className="container">
             <div className="stock">Stock {stock} unidades</div>
@@ -26,8 +31,9 @@ export const ItemCount = ({ stock, initial }) => {
                 <button className="buttonCounter">{counter}</button>
                 <button className="button2" onClick={decrementar}>-</button>
             </div>
-            <button className="carrito">Agregar al carrito</button>
-
+            <Button className="carrito" onClick={onAddToCart}>
+                Agregar al carrito
+            </Button>
         </div>
     );
 }
