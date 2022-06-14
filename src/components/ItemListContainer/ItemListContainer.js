@@ -11,11 +11,11 @@ function capitalize(word) {
     return word.charAt(0).toUpperCase() + lower.slice(1);
 }
 export const ItemListContainer = () => {
+
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [title, setTitle] = useState("Tienda");
     const { idCategory } = useParams();
-    console.log(idCategory);
 
     useEffect(() => {
         setLoading(true);
@@ -31,7 +31,7 @@ export const ItemListContainer = () => {
                 }
             })
             .catch((error) => {
-                console.log("ERROR", error);
+                console.error("Error", error);
             })
             .finally(() => {
                 setLoading(false);

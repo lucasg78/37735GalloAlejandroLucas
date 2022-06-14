@@ -1,26 +1,28 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ItemCount } from "./ItemCount";
-import GoToCart from './GoToCart';
-import './ItemDetail.scss'
+import "./ItemDetail.scss";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ item }) => {
-
-    const [cantidad, setCantidad] = useState(0)
+    const { addItem, isInCart } = useContext(CartContext);
 
     const navigate = useNavigate();
 
     const handleVolver = () => {
-        navigate(-1);
+        navigate("/");
     };
 
-    const onAddToCart = (counter) => {
-        alert(`${counter} items agregados al carrito`);
-        console.log(counter);
-        setCantidad(counter)
-    }
+    const onAddToCart = (cantidad) => {
+        const itemToCart = {
+            ...item,
+            cantidad,
+        };
+        addItem(itemToCart);
+    };
 
     return (
         <Card style={{ width: "18rem" }} className="itemDetail">
@@ -32,16 +34,21 @@ const ItemDetail = ({ item }) => {
                 <Card.Text className="itemDetailDesc">{item.desc}</Card.Text>
                 <Card.Text className="itemDetailSize">{item.size}</Card.Text>
                 <Card.Text className="itemDetailPrice">${item.price}</Card.Text>
-                <Card.Link href="#" className="itemDetailPago">Ver los medios de pago</Card.Link>
+                <Card.Link href="#" className="itemDetailPago">
+                    Ver los medios de pago
+                </Card.Link>
             </Card.Body>
-            <div>
-                {
-                    cantidad === 0 ?
-                        <ItemCount stock={item.stock} initial={0} onAdd={onAddToCart}
-                        /> : <GoToCart />
-                }
-            </div>
-            <Button variant="secondary" size="sm" className="btnVolver" onClick={handleVolver}>VOLVER</Button>
+            {isInCart(item.id) ? (
+                <Link to="/cart">
+                    <Button variant="secondary" size="sm" className="btnCart">Finalizar mi compra</Button>
+                </Link>
+            ) : (
+                <ItemCount stock={item.stock} initial={1} onAdd={onAddToCart} />
+            )}
+            <Button
+                variant="secondary" size="sm" className="btnContinue" onClick={handleVolver}>
+                Seguir comprando
+            </Button>
         </Card>
     );
 };

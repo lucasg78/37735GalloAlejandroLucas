@@ -11,8 +11,6 @@ export const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { itemId } = useParams()
-    console.log(itemId)
-    console.log(item)
 
     useEffect(() => {
         setLoading(true)
@@ -22,7 +20,7 @@ export const ItemDetailContainer = () => {
                 setItem(resp.find((item) => item.id === Number(itemId)))
             })
             .catch((error) => {
-                console.log('ERROR', error)
+                console.error('Error', error)
             })
             .finally(() => {
                 setLoading(false)

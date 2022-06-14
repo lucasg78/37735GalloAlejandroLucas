@@ -1,14 +1,18 @@
-import { Badge } from "react-bootstrap";
-import { BsCartPlus } from "react-icons/bs";
+import { BsFillCartPlusFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import { useCartContext } from '../../context/CartContext'
+import './CartWidget.scss'
 
-export const CartWidget = (props) => {
-    const { itemsCart } = props;
+const CartWidget = () => {
+
+    const { totalQuantity } = useCartContext()
+
     return (
-        <section>
-            <BsCartPlus className="cart"/>
-            {itemsCart > 0 && <Badge bg="success">{itemsCart}</Badge>}
-        </section>
-    );
-};
+        <Link to="/cart" className="widget">
+            <BsFillCartPlusFill className="cartIcon"/>
+            <span className="totalQ">{totalQuantity()}</span>
+        </Link>
+    )
+}
 
-export default CartWidget;
+export default CartWidget

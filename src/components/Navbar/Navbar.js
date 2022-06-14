@@ -1,9 +1,9 @@
 import './Navbar.scss'
-import { CartWidget } from "../CartWidget/CartWidget";
+import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
 
-export const Navbar = (props) => {
-    const { itemsCart } = props;
+export const Navbar = () => {
+
     return (
         <header className="header">
             <div className="header__container">
@@ -18,7 +18,7 @@ export const Navbar = (props) => {
                     <Link to={"/category/congelados"} className="link">
                         <p className="header__navlink">Congelados</p>
                     </Link>
-                    <CartWidget itemsCart={itemsCart} className="cart"/>
+                    <CartWidget />
                 </nav>
             </div>
         </header>

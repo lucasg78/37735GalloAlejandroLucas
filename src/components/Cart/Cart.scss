@@ -1,0 +1,114 @@
+.containerCart {
+    width: 50%;
+    text-align:left;
+    font-size:20px;
+    margin: 20px 10%;
+    padding: 10px 0;
+}
+
+.detailCart {
+    font-size:22px;
+    margin-left: 10px;
+}
+
+.btnRemove {
+    text-align: center;
+    border:none;
+    line-height: 1 !important;
+    padding:auto;
+}
+
+.title {
+    font-size:14px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.detail {
+    text-align: center;
+    vertical-align: middle;
+    font-size:14px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.table {
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 100%;  
+}
+
+th, td {
+    overflow: hidden;
+    width: 50px;
+}
+
+tr {
+    height:35px;
+}
+
+.tableRows {
+    background-color:rgb(221, 226, 231);
+    height:40px;
+}
+
+.tdItem {
+    width: 180px;
+}
+
+.tdResto {
+    width: 100px;
+}
+
+.tableRows .tdTrash {
+    background-color: white;
+    font-size:16px;
+}
+
+.containerTotalPrice {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width:47%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 35px;
+    background-color:rgb(33, 33, 104);
+    color: white;
+    border-radius: 3px;
+}
+
+.totalPrice {
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    font-size:18px;
+    padding: 0px;
+    margin: 0px;
+}
+
+h5 {
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    line-height: 1 !important;
+    font-size:16px;
+}
+
+.btnEmptyCart {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    width:25%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 30px;
+    background-color:white;
+    color: black;
+    font-size:14px;
+    border: solid 1px black;
+    border-radius: 2px;
+}

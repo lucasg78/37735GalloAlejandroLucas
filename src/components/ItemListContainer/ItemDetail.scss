@@ -44,7 +44,7 @@
 .itemDetailSize {
     text-align: center;
     color: rgb(49, 30, 189);
-    font-size: 14px;
+    font-size: 13px;
     font-style: italic;
     margin: 0;
     padding: 0px;
@@ -72,20 +72,41 @@
 }
 
 
-.btnVolver {
+.btnContinue {
     width: 200px;
     height: 30px;
     text-align: center;
-    margin: 5px auto 0 auto;
-    color: black;
-    background-color: white;
+    margin: 6px auto 0 auto;
+    color: white;
+    background-color: blue;
     font-size: 13px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.btnVolver:hover {
+.btnContinue:hover {
+    background-color: white;
+    border-color: blue;
+    color: blue;
+    cursor: pointer;
+}
+
+.btnCart {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    margin: 6px auto 0 auto;
+    color: white;
+    background-color: rgb(16, 16, 65);
     font-size: 13px;
-    background-color: black;
+    border-color: rgb(16, 16, 65);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnCart:hover {
+    background-color: rgb(16, 16, 65);
+    color: white;
+    border-color: rgb(16, 16, 65);
     cursor: pointer;
 }
