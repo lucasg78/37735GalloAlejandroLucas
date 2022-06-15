@@ -9,10 +9,11 @@ const CartWidget = () => {
 
     return (
         <Link to="/cart" className="widget">
-            <BsFillCartPlusFill className="cartIcon"/>
+            <BsFillCartPlusFill className="cartIcon" />
             <span className="totalQ">{totalQuantity()}</span>
-        </Link>
+        </Link >
     )
 }
 
 export default CartWidget
+

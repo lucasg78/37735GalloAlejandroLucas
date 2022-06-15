@@ -2,9 +2,11 @@ import { useCartContext } from "../../context/CartContext";
 import { BsTrashFill } from "react-icons/bs";
 import Table from 'react-bootstrap/Table'
 import './Cart.scss'
+import EmptyCart from "./EmptyCart"
 
 const Cart = () => {
   const { cart, totalPrice, emptyCart, removeItem } = useCartContext();
+  if (cart.length === 0) return <EmptyCart/>
   return (
     <div className="containerCart">
       <h3 className="detailCart">Detalle de la compra</h3>

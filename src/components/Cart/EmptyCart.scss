@@ -1,21 +1,29 @@
-.cardItem {
-    display: inline-flex;
-    margin:10px;
+.emptyCart {
+    width: 50%;
+    text-align:left;
+    font-size:20px;
+    margin: 20px 10%;
+    padding: 10px 0;
 }
 
-.detailProduct {
-    width: 50%;
+.detailEmptyCart {
+    font-size:22px;
+    margin-left: 10px;
+}
+
+.goShopping {
+    width: 25%;
     height: 35px;
     text-align: center;
     margin: 6px auto 0 auto;
     color: white;
-    background-color: rgb(22, 22, 57);
+    background-color: rgb(14, 14, 150);
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.detailProduct:hover {
+.goShopping:hover {
     background-color: white;
     border-color: rgb(22, 22, 57);
     color: rgb(22, 22, 57);
