@@ -1,5 +1,4 @@
 .header {
-    font-family: 'Lato', sans-serif;
     background-color: rgb(32, 32, 110);
 
     &__container {
@@ -13,6 +12,7 @@
 
         .link {
             text-decoration: none;
+            margin-top: 10px;
         }
 
         .header__logo {

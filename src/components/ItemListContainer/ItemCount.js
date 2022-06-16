@@ -22,6 +22,12 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
         onAdd(counter);
     };
 
+    if (stock === 0) {
+        return (
+            <h5 className="noStock">SIN STOCK</h5>
+        )
+    }
+
     return (
         <div className="container">
             <div className="stock">Stock {stock} unidades</div>

@@ -28,34 +28,39 @@ const Cart = () => {
         <Table striped bordered hover size="lg" className="table">
           <tbody>
             <tr className="tableRows">
-              <td className="text-center detail tdItem">{item.name}</td>
+              <td className="text-start detail tdItem">{item.name}</td>
               <td className="text-center detail tdResto">${item.price}</td>
               <td className="text-center detail tdResto">{item.cantidad}</td>
               <td className="text-center detail tdResto">${item.price * item.cantidad}</td>
               <td className="text-center tdTrash">
                 <button className="btnRemove" onClick={() => removeItem(item.id)}>
                   <BsTrashFill />
-                </button></td>
+                </button>
+              </td>
             </tr>
           </tbody>
         </Table>
       ))}
 
       {
-        <Table>
+        <Table striped bordered hover size="lg" className="table">
           <tbody>
-            <tr className="tableRowTotal">
+            <tr className="tableRows">
               <td className="tdTotal">TOTAL</td>
               <td className="tdTotalPesos">${totalPrice()}</td>
-              <td className="tdTotalTrash"></td>
+              <td className="text-center tdTrash">
+                <button className="btnRemoveTotal" onClick={emptyCart}>
+                  <BsTrashFill />
+                </button>
+              </td>
             </tr>
           </tbody>
         </Table>
       }
 
-      <button onClick={emptyCart} className="btnEmptyCart">
+{/*       <button onClick={emptyCart} className="btnEmptyCart">
         Vaciar carrito
-      </button>
+      </button> */}
     </div >
   );
 };

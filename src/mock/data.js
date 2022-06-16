@@ -66,7 +66,7 @@ const productos = [
         size: "Frasco 155 grs.",
         category: "conservas",
         price: 3400,
-        stock: 10,
+        stock: 0,
         img: '../img/tiburon.jpg',
     },
     {
