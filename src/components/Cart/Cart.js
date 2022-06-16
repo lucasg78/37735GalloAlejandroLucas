@@ -6,49 +6,57 @@ import EmptyCart from "./EmptyCart"
 
 const Cart = () => {
   const { cart, totalPrice, emptyCart, removeItem } = useCartContext();
-  if (cart.length === 0) return <EmptyCart/>
+  if (cart.length === 0) return <EmptyCart />
   return (
     <div className="containerCart">
-      <h3 className="detailCart">Detalle de la compra</h3>
+      <h3 className="detailCart">Detalle de tu compra</h3>
       <hr />
+
+      <Table striped bordered hover size="lg" className="table">
+        <thead>
+          <tr>
+            <th className="text-center title tdItem">Item</th>
+            <th className="text-center title tdResto">Precio </th>
+            <th className="text-center title tdResto">Cantidad</th>
+            <th className="text-center title tdResto">Subtotal</th>
+            <th></th>
+          </tr>
+        </thead>
+      </Table>
 
       {cart.map((item) => (
         <Table striped bordered hover size="lg" className="table">
-          <thead>
-            <tr>
-              <th className="text-center title">Item</th>
-              <th className="text-center title">Precio </th>
-              <th className="text-center title">Cantidad</th>
-              <th className="text-center title">Subtotal</th>
-              <th></th>
-            </tr>
-          </thead>
           <tbody>
             <tr className="tableRows">
               <td className="text-center detail tdItem">{item.name}</td>
               <td className="text-center detail tdResto">${item.price}</td>
               <td className="text-center detail tdResto">{item.cantidad}</td>
               <td className="text-center detail tdResto">${item.price * item.cantidad}</td>
-              <td className="text-center tdTrash"><button className="btnRemove"
-                onClick={() => removeItem(item.id)}
-              >
-                <BsTrashFill />
-              </button></td>
+              <td className="text-center tdTrash">
+                <button className="btnRemove" onClick={() => removeItem(item.id)}>
+                  <BsTrashFill />
+                </button></td>
             </tr>
           </tbody>
         </Table>
       ))}
 
       {
-        <div className="containerTotalPrice">
-          <h5 className="totalPrice">TOTAL ${totalPrice()}</h5>
-        </div>
+        <Table>
+          <tbody>
+            <tr className="tableRowTotal">
+              <td className="tdTotal">TOTAL</td>
+              <td className="tdTotalPesos">${totalPrice()}</td>
+              <td className="tdTotalTrash"></td>
+            </tr>
+          </tbody>
+        </Table>
       }
 
       <button onClick={emptyCart} className="btnEmptyCart">
         Vaciar carrito
       </button>
-    </div>
+    </div >
   );
 };
 

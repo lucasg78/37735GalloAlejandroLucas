@@ -36,6 +36,7 @@
     border-collapse: collapse;
     table-layout: auto;
     width: 100%;  
+    margin-bottom: 0 !important;
 }
 
 th, td {
@@ -60,32 +61,43 @@ tr {
     width: 100px;
 }
 
+.tableRowTotal {
+    border-collapse: collapse;
+    table-layout: auto;
+    background-color:rgba(21, 42, 65, 0.313);
+    height:40px;
+    border-width:1px 0;
+    border-style:solid;
+    border-color: #dee2e6;
+}
+
+.tdTotal {
+    width: 380px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+    padding: 0.5rem 1rem 0.5rem 0 !important;
+}
+
+.tdTotalPesos {
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align:center;
+    padding: 0.5rem 0 0.5rem 0 !important;
+}
+
+.tdTotalTrash {
+    width: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align:center;
+    padding: 0.5rem 0 0.5rem 0 !important;
+}
+
 .tableRows .tdTrash {
     background-color: white;
     font-size:16px;
-}
-
-.containerTotalPrice {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    width:35%;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    height: 35px;
-    background-color:rgb(33, 33, 104);
-    color: white;
-    border-radius: 3px;
-}
-
-.totalPrice {
-    display:flex;
-    justify-content:center;
-    text-align:center;
-    font-size:16px;
-    padding: 0px;
-    margin: 0px;
 }
 
 h5 {
