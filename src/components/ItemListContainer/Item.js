@@ -9,8 +9,8 @@ const Item = ({ item }) => {
         <Card style={{ width: '18rem' }} className="cardItem">
             <Card.Img variant="top" src={item.img} />
             <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text>{item.desc}</Card.Text>
+                <Card.Title className="cardName">{item.name}</Card.Title>
+                <Card.Text className="cardDesc">{item.desc}</Card.Text>
                 <Card.Text><strong>Precio ${item.price}</strong></Card.Text>
                 <Link to={`/item/${item.id}`}>
                     <Button variant="primary" className="detailProduct">Detalle</Button>

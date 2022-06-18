@@ -1,32 +1,32 @@
 .containerCart {
     width: 50%;
-    text-align:left;
-    font-size:20px;
+    text-align: left;
+    font-size: 20px;
     margin: 20px 10%;
     padding: 10px 0;
 }
 
 .detailCart {
-    font-size:22px;
+    font-size: 22px;
     margin-left: 10px;
 }
 
 .btnRemove {
     text-align: center;
-    border:none;
+    border: none;
     line-height: 1 !important;
-    padding:auto;
+    padding: auto;
 }
 
 .btnRemoveTotal {
     text-align: center;
-    border:none;
+    border: none;
     line-height: 1 !important;
-    padding:auto;
+    padding: auto;
 }
 
 .title {
-    font-size:13px;
+    font-size: 13px;
     padding: 0px;
     margin: 0px;
 }
@@ -34,7 +34,7 @@
 .detail {
     text-align: center;
     vertical-align: middle;
-    font-size:13px;
+    font-size: 13px;
     padding: 0px;
     margin: 0px;
 }
@@ -42,22 +42,23 @@
 .table {
     border-collapse: collapse;
     table-layout: auto;
-    width: 100%;  
+    width: 100%;
     margin-bottom: 0 !important;
 }
 
-th, td {
+th,
+td {
     overflow: hidden;
     width: 50px;
 }
 
 tr {
-    height:35px;
+    height: 35px;
 }
 
 .tableRows {
-    background-color:rgb(221, 226, 231);
-    height:40px;
+    background-color: rgb(221, 226, 231);
+    height: 40px;
 }
 
 .tdItem {
@@ -71,16 +72,16 @@ tr {
 .tableRowTotal {
     border-collapse: collapse;
     table-layout: auto;
-    background-color:rgba(21, 42, 65, 0.313);
-    height:40px;
-    border-width:1px 0;
-    border-style:solid;
+    background-color: rgba(21, 42, 65, 0.313);
+    height: 40px;
+    border-width: 1px 0;
+    border-style: solid;
     border-color: #dee2e6;
 }
 
 .tdTotal {
     width: 380px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     text-align: right;
     padding: 0.5rem 1rem 0.5rem 0 !important;
@@ -88,9 +89,9 @@ tr {
 
 .tdTotalPesos {
     width: 100px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     padding: 0.5rem 0 0.5rem 0 !important;
 }
 
@@ -98,21 +99,21 @@ tr {
     width: 50px;
     font-size: 16px;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
     padding: 0.5rem 0 0.5rem 0 !important;
 }
 
 .tableRows .tdTrash {
     background-color: white;
-    font-size:16px;
+    font-size: 16px;
 }
 
 h5 {
-    display:flex;
-    justify-content:center;
-    text-align:center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     line-height: 1 !important;
-    font-size:16px;
+    font-size: 16px;
 }
 
 .btnEmptyCart {
@@ -120,14 +121,37 @@ h5 {
     margin-top: 10px;
     margin-left: auto;
     margin-right: 0;
-    width:20%;
+    width: 20%;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     height: 30px;
-    background-color:white;
+    background-color: white;
     color: black;
-    font-size:14px;
+    font-size: 14px;
     border: solid 1px black;
     border-radius: 2px;
+}
+
+.containerBtnCont {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.btnContShopping {
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 0 0;
+    color: white;
+    background-color: blue;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnContShopping:hover {
+    background-color: white;
+    border-color: blue;
+    color: blue;
+    cursor: pointer;
 }

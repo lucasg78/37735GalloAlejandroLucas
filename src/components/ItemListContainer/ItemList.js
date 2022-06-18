@@ -1,10 +1,10 @@
 import "./ItemList.scss";
 import Item from "./Item";
 
-const ItemList = ({ items, titulo }) => {
+const ItemList = ({ items }) => {
     return (
         <div>
-            <h2 className="tituloTienda">{titulo}</h2>
+            <h2 className="welcome">Bienvenido a nuestra tienda online</h2>
             <hr />
 
             {items.map((item) => (

@@ -2,10 +2,20 @@ import { useCartContext } from "../../context/CartContext";
 import { BsTrashFill } from "react-icons/bs";
 import Table from 'react-bootstrap/Table'
 import './Cart.scss'
+import { Button } from "react-bootstrap"
 import EmptyCart from "./EmptyCart"
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+
   const { cart, totalPrice, emptyCart, removeItem } = useCartContext();
+
+  const navigate = useNavigate();
+
+  const handleVolver = () => {
+    navigate("/");
+  };
+
   if (cart.length === 0) return <EmptyCart />
   return (
     <div className="containerCart">
@@ -58,9 +68,15 @@ const Cart = () => {
         </Table>
       }
 
-{/*       <button onClick={emptyCart} className="btnEmptyCart">
-        Vaciar carrito
-      </button> */}
+      {
+        <div className="containerBtnCont">
+          <Button
+            variant="secondary" size="sm" className="btnContShopping" onClick={handleVolver}>
+            Seguir comprando
+          </Button>
+        </div>
+      }
+
     </div >
   );
 };
