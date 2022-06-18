@@ -5,7 +5,7 @@ Este proyecto consiste en el desarrollo de la tienda online de la empresa "Ahuma
 
 ## Características y herramientas
 
- La aplicación se desarrolló utilizando los componentes de React JS y aplicando Bootstrap como framework. También se utilizó GIT para controlar las versiones y GitHub para crear un respositorio. Las imágenes, los videos y cualquier otro contenido multimedia fueron descargados de la web en formato de alta calidad, cuando fue posible. El producto es 100% responsive y se puede visualizar desde los principales navegadores disponibles actualmente en el mercado.  
+La aplicación se desarrolló utilizando los componentes de React JS y aplicando Bootstrap como framework. También se utilizó Git para controlar las versiones y GitHub para crear un respositorio. Las imágenes, los videos y cualquier otro contenido multimedia fueron descargados de la web en formato de alta calidad, cuando fue posible. El producto es 100% responsive y se puede visualizar desde los principales navegadores disponibles actualmente en el mercado.  
 
  ## Autor
 Alejandro Lucas Gallo - Junio 2022
