@@ -155,3 +155,21 @@ h5 {
     color: blue;
     cursor: pointer;
 }
+
+.btnFinShopping {
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 0 0;
+    color: white;
+    background-color: rgb(17, 17, 57);
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnFinShopping:hover {
+    background-color: white;
+    border-color: rgb(17, 17, 57);
+    color: rgb(17, 17, 57);
+    cursor: pointer;
+}

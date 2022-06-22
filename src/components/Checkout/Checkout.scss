@@ -1,0 +1,58 @@
+.containerCheckOut {
+    width: auto;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.containerEnd {
+    width: auto;
+    margin-top: 40px;
+    padding-left: 35%;
+    padding-right: 35%;
+}
+
+.detailCheckOut {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.btnSend {
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 0 0;
+    color: white;
+    background-color: rgb(17, 17, 57);
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnSend:hover {
+    background-color: white;
+    border: solid 1px rgb(17, 17, 57);
+    color: rgb(17, 17, 57);
+    cursor: pointer;
+}
+
+.btnCancel {
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 0 0;
+    color: white;
+    background-color: red;
+    border:none;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnCancel:hover {
+    color:red;
+    background-color: white;
+    border: solid 1px red;
+    cursor: pointer;
+}
+
+.inputSize {
+    font-size: 14px;
+}

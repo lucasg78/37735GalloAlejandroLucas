@@ -51,7 +51,7 @@ const ItemDetail = ({ item }) => {
                 </Card.Body>
                 {isInCart(item.id) ? (
                     <Link to="/cart">
-                        <Button variant="secondary" size="sm" className="btnCart">Terminar mi compra</Button>
+                        <Button variant="secondary" size="sm" className="btnCart">Ir al carrito</Button>
                     </Link>
                 ) : (
                     <ItemCount stock={item.stock} initial={1} onAdd={onAddToCart} />

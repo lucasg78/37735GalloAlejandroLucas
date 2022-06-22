@@ -5,6 +5,7 @@ import './Cart.scss'
 import { Button } from "react-bootstrap"
 import EmptyCart from "./EmptyCart"
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const Cart = () => {
 
@@ -66,6 +67,17 @@ const Cart = () => {
             </tr>
           </tbody>
         </Table>
+      }
+
+      {
+        <div className="containerBtnCont">
+          <Link to="/checkout">
+            <Button
+              variant="secondary" size="sm" className="btnFinShopping">
+              Terminar mi compra
+            </Button>
+          </Link>
+        </div>
       }
 
       {
