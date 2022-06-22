@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(31, 77, 83);
+    background-color: rgb(32, 32, 110);
 
     .login-container {
         background-color: #fff;
@@ -12,4 +12,22 @@
         border-radius: 20px;
         width: 500px;
     }
+}
+
+.btnLogin {
+    width: 100px;
+    height: 35px;
+    margin: 10px 0 0 0;
+    color: white;
+    background-color: rgb(17, 17, 57);
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnLogin:hover {
+    background-color: white;
+    border: solid 1px rgb(17, 17, 57);
+    color: rgb(17, 17, 57);
+    cursor: pointer;
 }

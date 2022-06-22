@@ -27,7 +27,7 @@ const LoginScreen = () => {
     return (
         <div className="login-screen">
             <div className="login-container">
-                <h2>Login</h2>
+                <h3>Login</h3>
                 <hr/>
 
                 <form onSubmit={handleSubmit}>
@@ -52,7 +52,7 @@ const LoginScreen = () => {
                     {error.password && <small className='text-danger'>{error.password}</small>}
 
                     <br/>
-                    <button type='submit' className='btn btn-primary'>Enviar</button>
+                    <button type='submit' className='btnLogin'>Enviar</button>
                 </form>
 
             </div>
