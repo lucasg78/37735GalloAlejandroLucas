@@ -5,49 +5,30 @@ import { collection, getDocs, addDoc, writeBatch, query, where, documentId } fro
 import { db } from "../../firebase/config"
 import './Checkout.scss'
 import Swal from 'sweetalert2';
+import { Formik } from "formik"
+import * as Yup from 'yup'
+
+const schema = Yup.object().shape({
+    nombre: Yup.string()
+        .required('Este campo es obligatorio')
+        .min(4, 'El nombre es demasiado corto')
+        .max(30, 'Máximo 30 caracteres'),
+    email: Yup.string()
+        .required('Este campo es obligatorio')
+        .email('Formato de email inválido'),
+    direccion: Yup.string()
+        .required('Este campo es obligatorio')
+        .min(4, 'La dirección es demasiado corta')
+        .max(30, 'Máximo 30 caracteres'),
+})
 
 const Checkout = () => {
 
     const { cart, totalPrice, emptyCart } = useCartContext()
 
     const [orderId, setOrderId] = useState(null)
-    const [values, setValues] = useState({
-        nombre: '',
-        email: '',
-        direccion: ''
-    })
 
-    const handleInputChange = (e) => {
-        setValues({
-            ...values,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-
-        if (values.nombre.length < 5) {
-            Swal.fire({
-                icon: "warning",
-                title: "El nombre es demasiado corto",
-            })
-            return
-        }
-        if (values.email.length < 5) {
-            Swal.fire({
-                icon: "warning",
-                title: "El email es inválido",
-            })
-            return
-        }
-        if (values.direccion.length < 5) {
-            Swal.fire({
-                icon: "warning",
-                title: "La dirección no es correcta",
-            })
-            return
-        }
+    const generarOrden = async (values) => {
 
         const orden = {
             buyer: values,
@@ -107,38 +88,56 @@ const Checkout = () => {
             <h3 className="detailCheckOut">Checkout</h3>
             <hr />
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    value={values.nombre}
-                    name="nombre"
-                    onChange={handleInputChange}
-                    type={"text"}
-                    placeholder="Nombre y apellido"
-                    className="form-control inputSize my-2"
-                />
-                <input
-                    value={values.email}
-                    name="email"
-                    onChange={handleInputChange}
-                    type={"text"}
-                    placeholder="email@example.com"
-                    className="form-control inputSize my-2"
-                />
-                <input
-                    value={values.direccion}
-                    name="direccion"
-                    onChange={handleInputChange}
-                    type={"text"}
-                    placeholder="Dirección"
-                    className="form-control inputSize my-2"
-                />
+            <Formik
+                initialValues={{
+                    nombre: '',
+                    email: '',
+                    direccion: ''
+                }}
+                onSubmit={generarOrden}
+                validationSchema={schema}
+            >
+                {(formik) => (
+                    <form onSubmit={formik.handleSubmit}>
+                        <input
+                            value={formik.values.nombre}
+                            name="nombre"
+                            onChange={formik.handleChange}
+                            type={"text"}
+                            placeholder="Alejandro Lucas "
+                            className="form-control my-2"
+                        />
+                        {formik.errors.nombre && <p className="alert alert-danger">{formik.errors.nombre}</p>}
 
-                <button type="submit" className="btnSend">Enviar</button>
+                        <input
+                            value={formik.values.email}
+                            name="email"
+                            onChange={formik.handleChange}
+                            type={"text"}
+                            placeholder="alejandro.lucas@gallo.com"
+                            className="form-control my-2"
+                        />
+                        {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
 
-            </form>
+                        <input
+                            value={formik.values.direccion}
+                            name="direccion"
+                            onChange={formik.handleChange}
+                            type={"text"}
+                            placeholder="Calle Principal 123"
+                            className="form-control my-2"
+                        />
+                        {formik.errors.direccion && <p className="alert alert-danger">{formik.errors.direccion}</p>}
+
+                        <button type="submit" className="btnSend">Enviar</button>
+                    </form>
+                )}
+            </Formik>
+
             <button onClick={emptyCart} className="btnCancel">Cancelar mi compra</button>
         </div>
     )
 }
+
 
 export default Checkout
