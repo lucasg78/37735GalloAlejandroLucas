@@ -74,7 +74,7 @@ const Cart = () => {
           <Link to="/checkout">
             <Button
               variant="secondary" size="sm" className="btnFinShopping">
-              Terminar mi compra
+              Siguiente
             </Button>
           </Link>
         </div>

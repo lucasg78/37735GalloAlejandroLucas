@@ -14,7 +14,9 @@ export const AuthProvider = ({children}) => {
 
     const [auth, setAuth] = useState({
         loggedIn: true,
-        userId: "alejandro.lucas@gallo.com"
+        userId: "alejandro.lucas@gallo.com",
+        userName: "Alejandro Lucas Gallo",
+        userPhone:"341 4 567890",
     })
 
     const [error, setError] = useState({})

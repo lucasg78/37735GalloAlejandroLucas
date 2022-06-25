@@ -1,14 +1,24 @@
 .containerCheckOut {
-    width: auto;
-    padding-left: 30%;
-    padding-right: 30%;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 5%;
+    padding-right: 10%;
 }
 
-.containerEnd {
-    width: auto;
-    margin-top: 40px;
-    padding-left: 35%;
-    padding-right: 35%;
+.identTitle {
+    margin-bottom: 20px;
+}
+
+.cardText {
+    margin-bottom: 25px;
+}
+
+.cardText2 {
+    margin-bottom: 15px;
+}
+
+.card {
+    border: none;
 }
 
 .detailCheckOut {
@@ -16,13 +26,39 @@
     margin-left: 10px;
 }
 
+.separador {
+    margin-bottom: 20px;
+}
+
+h4 {
+    display: flex;
+    justify-content:flex-start;
+    font-size: 16px;
+    font-weight:bold;
+    margin-left: 10px;
+}
+
+h5 {
+    display: flex;
+    justify-content:flex-start;
+    font-size: 14px;
+    font-weight:normal;
+    margin-left: 5px;
+}
+
+.btns {
+    display: flex;
+    margin-top: 20px;
+}
+
 .btnSend {
-    width: 200px;
-    height: 30px;
-    margin: 10px 0 0 0;
+    width: 120px;
+    height: 35px;
+    margin: 10px 0 0 10px;
     color: white;
     background-color: rgb(17, 17, 57);
     font-size: 13px;
+    border-color: rgb(17, 17, 57);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -35,9 +71,9 @@
 }
 
 .btnCancel {
-    width: 200px;
-    height: 30px;
-    margin: 10px 0 0 0;
+    width: 120px;
+    height: 35px;
+    margin: 10px 0 0 10px;
     color: white;
     background-color: red;
     border:none;
@@ -54,5 +90,17 @@
 }
 
 .inputSize {
+    width:220px;
     font-size: 14px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.alertError {
+    font-size:13px;
+    width:200px;
+    color:red;
+    background-color:none;
+    margin-left: 5px;
+    margin-bottom: 0;
 }

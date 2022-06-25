@@ -1,32 +1,31 @@
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
+import { useAuthContext } from "../../context/AuthContext"
 import { Navigate } from 'react-router-dom'
 import { collection, getDocs, addDoc, writeBatch, query, where, documentId } from "firebase/firestore"
 import { db } from "../../firebase/config"
 import './Checkout.scss'
 import Swal from 'sweetalert2';
+import { CardGroup, Card } from "react-bootstrap";
 import { Formik } from "formik"
 import * as Yup from 'yup'
 
 const schema = Yup.object().shape({
-    nombre: Yup.string()
-        .required('Este campo es obligatorio')
-        .min(4, 'El nombre es demasiado corto')
-        .max(30, 'Máximo 30 caracteres'),
-    email: Yup.string()
-        .required('Este campo es obligatorio')
-        .email('Formato de email inválido'),
-    direccion: Yup.string()
-        .required('Este campo es obligatorio')
-        .min(4, 'La dirección es demasiado corta')
-        .max(30, 'Máximo 30 caracteres'),
+    calle: Yup.string()
+        .required('Este campo es obligatorio'),
+    puerta: Yup.string()
+        .required('Este campo es obligatorio'),
+    entrecalles: Yup.string()
+        .required('Este campo es obligatorio'),
 })
 
 const Checkout = () => {
 
-    const { cart, totalPrice, emptyCart } = useCartContext()
+    const { cart, totalPrice, totalQuantity, emptyCart } = useCartContext()
 
     const [orderId, setOrderId] = useState(null)
+
+    const { auth } = useAuthContext()
 
     const generarOrden = async (values) => {
 
@@ -88,53 +87,93 @@ const Checkout = () => {
             <h3 className="detailCheckOut">Checkout</h3>
             <hr />
 
-            <Formik
-                initialValues={{
-                    nombre: '',
-                    email: '',
-                    direccion: ''
-                }}
-                onSubmit={generarOrden}
-                validationSchema={schema}
-            >
-                {(formik) => (
-                    <form onSubmit={formik.handleSubmit}>
-                        <input
-                            value={formik.values.nombre}
-                            name="nombre"
-                            onChange={formik.handleChange}
-                            type={"text"}
-                            placeholder="Alejandro Lucas "
-                            className="form-control my-2"
-                        />
-                        {formik.errors.nombre && <p className="alert alert-danger">{formik.errors.nombre}</p>}
+            <CardGroup>
 
-                        <input
-                            value={formik.values.email}
-                            name="email"
-                            onChange={formik.handleChange}
-                            type={"text"}
-                            placeholder="alejandro.lucas@gallo.com"
-                            className="form-control my-2"
-                        />
-                        {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
+                <Card className="card">
+                    <Card.Body>
+                        <Card.Title className="identTitle">Identificación</Card.Title>
+                        <Card.Text className="cardText"><h5><strong>Nombre y apellido: &nbsp;</strong>{auth.userName}</h5></Card.Text>
+                        <Card.Text className="cardText"><h5><strong>E-mail: &nbsp;</strong> {auth.userId}</h5></Card.Text>
+                        <Card.Text className="cardText"><h5><strong>Teléfono: &nbsp;</strong> {auth.userPhone}</h5></Card.Text>
+                    </Card.Body>
+                </Card>
 
-                        <input
-                            value={formik.values.direccion}
-                            name="direccion"
-                            onChange={formik.handleChange}
-                            type={"text"}
-                            placeholder="Calle Principal 123"
-                            className="form-control my-2"
-                        />
-                        {formik.errors.direccion && <p className="alert alert-danger">{formik.errors.direccion}</p>}
+                <Card>
+                    <Card.Body>
+                        <Card.Title className="identTitle">Datos de envío</Card.Title>
+                        <Card.Text>
 
-                        <button type="submit" className="btnSend">Enviar</button>
-                    </form>
-                )}
-            </Formik>
+                            <Formik
+                                initialValues={{
+                                    calle: '',
+                                    puerta: ''
+                                }}
+                                onSubmit={generarOrden}
+                                validationSchema={schema}
+                            >
+                                {(formik) => (
+                                    <form onSubmit={formik.handleSubmit}>
+                                        <input
+                                            value={formik.values.calle}
+                                            name="calle"
+                                            onChange={formik.handleChange}
+                                            type={"text"}
+                                            placeholder="Nombre de la calle"
+                                            className="inputSize"
+                                        />
+                                        {formik.errors.calle && <h5 className="alertError">{formik.errors.calle}</h5>}
+                                        <br />
+                                        <input
+                                            value={formik.values.puerta}
+                                            name="puerta"
+                                            onChange={formik.handleChange}
+                                            type={"text"}
+                                            placeholder="Número de puerta, piso y dpto"
+                                            className="inputSize"
+                                        />
+                                        {formik.errors.puerta && <h5 className="alertError">{formik.errors.puerta}</h5>}
+                                        <br />
+                                        <input
+                                            value={formik.values.entrecalles}
+                                            name="entrecalles"
+                                            onChange={formik.handleChange}
+                                            type={"text"}
+                                            placeholder="Entre calles (referencia)"
+                                            className="inputSize"
+                                        />
+                                        {formik.errors.entrecalles && <h5 className="alertError">{formik.errors.entrecalles}</h5>}
+                                        <br />
+                                        <div className="btns">
+                                            <button type="submit" className="btnSend">Comprar</button>
+                                            <button onClick={emptyCart} className="btnCancel">Cancelar</button>
+                                        </div>
+                                    </form>
+                                )}
+                            </Formik>
 
-            <button onClick={emptyCart} className="btnCancel">Cancelar mi compra</button>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                {
+                <Card>
+                    <Card.Body>
+                        <Card.Title className="identTitle">Resumen de la compra</Card.Title>
+                        <Card.Text className="cardText2"><h5><strong>Cantidad de items: &nbsp;</strong>{totalQuantity()}</h5></Card.Text>
+                        <Card.Text className="cardText2"><h5><strong>Subtotal: &nbsp;</strong> ${totalPrice()}</h5></Card.Text>
+                        <Card.Text className="cardText2"><h5><strong>Costo de envío: &nbsp;</strong> $200</h5></Card.Text>
+                        <Card.Text className="cardText2"><h5><strong>Total a pagar: &nbsp;</strong> ${totalPrice()+200}</h5></Card.Text>
+                        <Card.Text></Card.Text>
+
+                    </Card.Body>
+                </Card>
+                }
+            </CardGroup>
+
+
+
+
+
+
         </div>
     )
 }

@@ -5,8 +5,8 @@ const UserInfo = () => {
 
     return (
         <div className="containerLog">
-            <h5 className="welcomeLog">Bienvenido, {auth.userId}</h5>
-            <button onClick={logout} className="btn btnLog btn-danger">Logout</button>
+            <h5 className="welcomeLog">Bienvenido {auth.userName}</h5>
+            <button onClick={logout} className="btnLog">Logout</button>
         </div>
     )
 }

@@ -9,8 +9,6 @@ const AppRouter = () => {
 
     const {auth} = useAuthContext()
 
-    // console.log(auth)
-
     return (
         <BrowserRouter>
             {
