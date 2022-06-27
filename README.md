@@ -10,6 +10,8 @@ La aplicación se desarrolló utilizando los componentes de React JS y aplicando
  ## Autor
 Alejandro Lucas Gallo - Junio 2022
 
+ ## Scripts disponibles
+
 ### `npm start`
 
 La app se puede ejecutar en el modo desarrollo.\
