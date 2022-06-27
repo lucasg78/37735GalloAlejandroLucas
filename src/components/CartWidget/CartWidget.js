@@ -8,10 +8,12 @@ const CartWidget = () => {
     const { totalQuantity } = useCartContext()
 
     return (
-            <Link to="/cart" className={`${totalQuantity() === 0 ? "d-none" : "widget"}`}>
-                <span><BsFillCartPlusFill className="cartIcon" /></span>
+        <Link to="/cart" className={`${totalQuantity() === 0 ? "d-none" : "widget"}`}>
+            <span>
+                <BsFillCartPlusFill className="cartIcon" title="Ver tu pedido"/>
                 <span className="totalQ">{totalQuantity()}</span>
-            </Link >
+            </span>
+        </Link >
     )
 }
 
