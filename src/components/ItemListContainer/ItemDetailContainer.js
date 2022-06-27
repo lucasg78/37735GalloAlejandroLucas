@@ -15,9 +15,7 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        // 1.- Armar la referencia
         const docRef = doc(db, "productos", itemId)
-        // 2.- Llamar a firestore
         getDoc(docRef)
             .then((doc) => {
                 setItem({ id: doc.id, ...doc.data() })

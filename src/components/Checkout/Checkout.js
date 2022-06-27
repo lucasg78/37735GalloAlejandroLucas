@@ -7,16 +7,23 @@ import { db } from "../../firebase/config"
 import './Checkout.scss'
 import Swal from 'sweetalert2';
 import { CardGroup, Card } from "react-bootstrap";
+import PriceFormat from "../PriceFormat/PriceFormat";
 import { Formik } from "formik"
 import * as Yup from 'yup'
 
 const schema = Yup.object().shape({
     calle: Yup.string()
-        .required('Este campo es obligatorio'),
+        .required('Este campo es obligatorio')
+        .min(4, 'El nombre es demasiado corto')
+        .max(30, 'Máximo 30 caracteres'),
     puerta: Yup.string()
-        .required('Este campo es obligatorio'),
+        .required('Este campo es obligatorio')
+        .min(3, 'El número debe tener al menos tres dígitos (ej. 001)')
+        .max(5, 'Máximo 5 dígitos'),
     entrecalles: Yup.string()
-        .required('Este campo es obligatorio'),
+        .required('Este campo es obligatorio')
+        .min(4, 'El nombre es demasiado corto')
+        .max(30, 'Máximo 30 caracteres'),
 })
 
 const Checkout = () => {
@@ -70,10 +77,11 @@ const Checkout = () => {
             })
         }
     }
+    
     if (orderId) {
         Swal.fire({
             icon: "success",
-            title: "¡Gracias por su compra!",
+            title: '¡Gracias por su compra!',
             text: `Su número de orden es: ${orderId}`,
         })
     }
@@ -92,11 +100,25 @@ const Checkout = () => {
                 <Card className="card">
                     <Card.Body>
                         <Card.Title className="identTitle">Identificación</Card.Title>
-                        <Card.Text className="cardText"><h5><strong>Nombre y apellido: &nbsp;</strong>{auth.userName}</h5></Card.Text>
-                        <Card.Text className="cardText"><h5><strong>E-mail: &nbsp;</strong> {auth.userId}</h5></Card.Text>
-                        <Card.Text className="cardText"><h5><strong>Teléfono: &nbsp;</strong> {auth.userPhone}</h5></Card.Text>
+                        <Card.Text><p className="cardText2"><strong>Nombre y apellido:&nbsp;</strong>{auth.userName}</p></Card.Text>
+                        <Card.Text><p className="cardText2"><strong>E-mail:&nbsp;</strong>{auth.userId}</p></Card.Text>
+                        <Card.Text><p className="cardText2"><strong>Teléfono:&nbsp;</strong>{auth.userPhone}</p></Card.Text>
                     </Card.Body>
                 </Card>
+
+                {
+                    <Card>
+                        <Card.Body>
+                            <Card.Title className="identTitle">Resumen del pedido</Card.Title>
+                            <Card.Text><p className="cardText2"><strong>Cantidad de items:&nbsp;</strong>{totalQuantity()}</p></Card.Text>
+                            <Card.Text><p className="cardText2"><strong>Subtotal:&nbsp;</strong><PriceFormat price={totalPrice()} />&nbsp;+ <strong>Costo de envío:</strong> $200</p></Card.Text>
+
+                            <Card.Text><p className="cardText2"><strong>Total a pagar:&nbsp;</strong><PriceFormat price={totalPrice() + 200} /></p></Card.Text>
+                            <Card.Text></Card.Text>
+
+                        </Card.Body>
+                    </Card>
+                }
 
                 <Card>
                     <Card.Body>
@@ -121,17 +143,17 @@ const Checkout = () => {
                                             placeholder="Nombre de la calle"
                                             className="inputSize"
                                         />
-                                        {formik.errors.calle && <h5 className="alertError">{formik.errors.calle}</h5>}
+                                        {formik.errors.calle && <p className="alertError">{formik.errors.calle}</p>}
                                         <br />
                                         <input
                                             value={formik.values.puerta}
                                             name="puerta"
                                             onChange={formik.handleChange}
                                             type={"text"}
-                                            placeholder="Número de puerta, piso y dpto"
+                                            placeholder="Número de puerta"
                                             className="inputSize"
                                         />
-                                        {formik.errors.puerta && <h5 className="alertError">{formik.errors.puerta}</h5>}
+                                        {formik.errors.puerta && <p className="alertError">{formik.errors.puerta}</p>}
                                         <br />
                                         <input
                                             value={formik.values.entrecalles}
@@ -141,7 +163,7 @@ const Checkout = () => {
                                             placeholder="Entre calles (referencia)"
                                             className="inputSize"
                                         />
-                                        {formik.errors.entrecalles && <h5 className="alertError">{formik.errors.entrecalles}</h5>}
+                                        {formik.errors.entrecalles && <p className="alertError">{formik.errors.entrecalles}</p>}
                                         <br />
                                         <div className="btns">
                                             <button type="submit" className="btnSend">Comprar</button>
@@ -154,25 +176,8 @@ const Checkout = () => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                {
-                <Card>
-                    <Card.Body>
-                        <Card.Title className="identTitle">Resumen de la compra</Card.Title>
-                        <Card.Text className="cardText2"><h5><strong>Cantidad de items: &nbsp;</strong>{totalQuantity()}</h5></Card.Text>
-                        <Card.Text className="cardText2"><h5><strong>Subtotal: &nbsp;</strong> ${totalPrice()}</h5></Card.Text>
-                        <Card.Text className="cardText2"><h5><strong>Costo de envío: &nbsp;</strong> $200</h5></Card.Text>
-                        <Card.Text className="cardText2"><h5><strong>Total a pagar: &nbsp;</strong> ${totalPrice()+200}</h5></Card.Text>
-                        <Card.Text></Card.Text>
 
-                    </Card.Body>
-                </Card>
-                }
             </CardGroup>
-
-
-
-
-
 
         </div>
     )

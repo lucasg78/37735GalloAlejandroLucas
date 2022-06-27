@@ -1,11 +1,12 @@
 import { useCartContext } from "../../context/CartContext";
 import { BsTrashFill } from "react-icons/bs";
-import Table from 'react-bootstrap/Table'
-import './Cart.scss'
-import { Button } from "react-bootstrap"
-import EmptyCart from "./EmptyCart"
+import Table from 'react-bootstrap/Table';
+import './Cart.scss';
+import { Button } from "react-bootstrap";
+import EmptyCart from "./EmptyCart";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import PriceFormat from "../PriceFormat/PriceFormat";
 
 const Cart = () => {
 
@@ -40,9 +41,9 @@ const Cart = () => {
           <tbody>
             <tr className="tableRows">
               <td className="text-start detail tdItem">{item.name}</td>
-              <td className="text-center detail tdResto">${item.price}</td>
+              <td className="text-center detail tdResto"><PriceFormat price={item.price}/></td>
               <td className="text-center detail tdResto">{item.cantidad}</td>
-              <td className="text-center detail tdResto">${item.price * item.cantidad}</td>
+              <td className="text-center detail tdResto"><PriceFormat price={item.price * item.cantidad}/></td>
               <td className="text-center tdTrash">
                 <button className="btnRemove" onClick={() => removeItem(item.id)}>
                   <BsTrashFill />
@@ -58,7 +59,7 @@ const Cart = () => {
           <tbody>
             <tr className="tableRows">
               <td className="tdTotal">TOTAL</td>
-              <td className="tdTotalPesos">${totalPrice()}</td>
+              <td className="tdTotalPesos"><PriceFormat price={totalPrice()}/></td>
               <td className="text-center tdTrash">
                 <button className="btnRemoveTotal" onClick={emptyCart}>
                   <BsTrashFill />

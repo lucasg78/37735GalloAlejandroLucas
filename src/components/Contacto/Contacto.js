@@ -9,9 +9,7 @@ const Contacto = () => {
         direccion: ''
     })
 
-    const handleInputChange = (e) => {
-        // console.log( e.target.name)
-        
+    const handleInputChange = (e) => {       
         setValues({
             ...values,
             [e.target.name]: e.target.value
@@ -20,9 +18,6 @@ const Contacto = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        // console.log("Submit del form")
-        // console.log(values)
     }
 
     return (
@@ -67,34 +62,3 @@ const Contacto = () => {
 }
 
 export default Contacto
-
-
-    // const handleClick = (e) => {
-    //     e.stopPropagation()
-    //     console.log(e)
-    // }
-
-    // useEffect(() => {
-
-    //     const clicker = (e) => {
-    //         console.log(e)
-    //     }
-
-    //     window.addEventListener('click', clicker)
-
-    //     return () => {
-    //         window.removeEventListener('click', clicker)
-    //     }
-    // }, [])
-
-
-    // const [nombre, setNombre] = useState('')
-    // const [email, setEmail] = useState('')
-
-    // const handleNombre = (e) => {
-    //     setNombre(e.target.value)
-    // }
-
-    // const handleEmail = (e) => {
-    //     setEmail(e.target.value)
-    // }

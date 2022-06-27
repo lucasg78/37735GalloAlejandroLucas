@@ -9,12 +9,13 @@
     margin-bottom: 20px;
 }
 
-.cardText {
-    margin-bottom: 25px;
+.card-text {
+    margin-bottom: 5px !important;
 }
 
 .cardText2 {
-    margin-bottom: 15px;
+    margin-top: 0px;
+    font-size: 15px;
 }
 
 .card {
@@ -47,26 +48,26 @@ h5 {
 }
 
 .btns {
-    display: flex;
+
     margin-top: 20px;
 }
 
 .btnSend {
     width: 120px;
     height: 35px;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 0;
     color: white;
-    background-color: rgb(17, 17, 57);
+    background-color: rgb(36, 36, 115);
     font-size: 13px;
-    border-color: rgb(17, 17, 57);
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .btnSend:hover {
     background-color: white;
-    border: solid 1px rgb(17, 17, 57);
-    color: rgb(17, 17, 57);
+    border: solid 1px rgb(36, 36, 115);
+    color: rgb(36, 36, 115);
     cursor: pointer;
 }
 
@@ -90,7 +91,7 @@ h5 {
 }
 
 .inputSize {
-    width:220px;
+    width:250px;
     font-size: 14px;
     margin-left: 0px;
     margin-bottom: 10px;

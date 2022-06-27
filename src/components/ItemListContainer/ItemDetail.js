@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ItemCount } from "./ItemCount";
 import "./ItemDetail.scss";
 import { CartContext } from "../../context/CartContext";
+import PriceFormat from "../PriceFormat/PriceFormat";
 
 const ItemDetail = ({ item }) => {
     const { addItem, isInCart } = useContext(CartContext);
@@ -35,7 +36,7 @@ const ItemDetail = ({ item }) => {
                     <Card.Img variant="top" src={item.img} className="img" />
                 </div>
                 <Card.Body className="itemCard">
-                    <Card.Text className="itemDetailPrice">${item.price}</Card.Text>
+                    <Card.Text className="itemDetailPrice"><PriceFormat price={item.price}/></Card.Text>
                 </Card.Body>
                 <Card.Link href="#" className="itemDetailPago">
                     Ver los medios de pago
