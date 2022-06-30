@@ -1,4 +1,3 @@
-import Contacto from '../components/Contacto/Contacto'
 import { ItemListContainer } from '../components/ItemListContainer/ItemListContainer'
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
@@ -19,7 +18,6 @@ const PrivateRoutes = () => {
                 <Route path="/category/:idCategory" element={<ItemListContainer />} />
                 <Route path="/item/:itemId" element={<ItemDetailContainer />} />
                 <Route path="*" element={<Navigate to={"/"} />} />
-                <Route path='/contacto' element={ <Contacto /> } />
                 <Route path="/cart" element={<Cart />} />
                 <Route path='/checkout' element={<Checkout/>} />
             </Routes>

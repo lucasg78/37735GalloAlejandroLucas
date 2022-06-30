@@ -10,12 +10,13 @@ La aplicación se desarrolló utilizando los componentes de React JS y aplicando
  ## Autor
 Alejandro Lucas Gallo - Junio 2022
 
- ## Scripts disponibles
+ ## Ejecución
 
-### `npm start`
+En el directorio del proyecto, la app se ejecuta con npm start, visualizándola en [http://localhost:3000](http://localhost:3000) en el navegador. La página se refrescará automáticamente cuando se hagan cambios. 
 
-La app se puede ejecutar en el modo desarrollo.\
-Abrila en [http://localhost:3000](http://localhost:3000) para visualizarla en tu navegador.
+## Recorrido virtual en video
 
-La página se refrescará automáticamente cuando hagas cambios.\
-También podrás ver en la consola cualquier error en el código.
+## Link a la app desplegada en
+
+## Agradecimientos
+
