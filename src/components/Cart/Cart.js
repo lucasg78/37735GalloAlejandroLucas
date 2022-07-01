@@ -36,30 +36,32 @@ const Cart = () => {
         </thead>
       </Table>
 
-      {cart.map((item) => (
-        <Table striped bordered hover size="lg" className="table">
-          <tbody>
-            <tr className="tableRows">
-              <td className="text-start detail tdItem">{item.name}</td>
-              <td className="text-center detail tdResto"><PriceFormat price={item.price}/></td>
-              <td className="text-center detail tdResto">{item.cantidad}</td>
-              <td className="text-center detail tdResto"><PriceFormat price={item.price * item.cantidad}/></td>
-              <td className="text-center tdTrash">
-                <button className="btnRemove" onClick={() => removeItem(item.id)}>
-                  <BsTrashFill />
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
-      ))}
+      {
+        cart.map((item) => (
+          <Table striped bordered hover size="lg" className="table" key={item.id}>
+            <tbody>
+              <tr className="tableRows">
+                <td className="text-start detail tdItem">{item.name}</td>
+                <td className="text-center detail tdResto"><PriceFormat price={item.price} /></td>
+                <td className="text-center detail tdResto">{item.cantidad}</td>
+                <td className="text-center detail tdResto"><PriceFormat price={item.price * item.cantidad} /></td>
+                <td className="text-center tdTrash">
+                  <button className="btnRemove" onClick={() => removeItem(item.id)}>
+                    <BsTrashFill />
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+        ))
+      }
 
       {
         <Table striped bordered hover size="lg" className="table">
           <tbody>
             <tr className="tableRows">
               <td className="tdTotal">TOTAL</td>
-              <td className="tdTotalPesos"><PriceFormat price={totalPrice()}/></td>
+              <td className="tdTotalPesos"><PriceFormat price={totalPrice()} /></td>
               <td className="text-center tdTrash">
                 <button className="btnRemoveTotal" onClick={emptyCart}>
                   <BsTrashFill />

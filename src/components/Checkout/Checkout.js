@@ -14,25 +14,25 @@ import * as Yup from 'yup'
 const schema = Yup.object().shape({
     calle: Yup.string()
         .required('Este campo es obligatorio')
-        .min(4, 'El nombre es demasiado corto')
+        .min(2, 'El nombre debe tener al menos dos caracteres')
         .max(30, 'Máximo 30 caracteres'),
     puerta: Yup.string()
         .required('Este campo es obligatorio')
-        .min(3, 'El número debe tener al menos tres dígitos (ej. 001)')
-        .max(5, 'Máximo 5 dígitos'),
+        .min(1, '')
+        .max(3, ''),
     entrecalles: Yup.string()
         .required('Este campo es obligatorio')
-        .min(4, 'El nombre es demasiado corto')
+        .min(4, 'El texto es demasiado corto')
         .max(30, 'Máximo 30 caracteres'),
 })
 
 const Checkout = () => {
 
+    const { auth } = useAuthContext()
+
     const { cart, totalPrice, totalQuantity, emptyCart } = useCartContext()
 
     const [orderId, setOrderId] = useState(null)
-
-    const { auth } = useAuthContext()
 
     const generarOrden = async (values) => {
 
@@ -128,7 +128,8 @@ const Checkout = () => {
                             <Formik
                                 initialValues={{
                                     calle: '',
-                                    puerta: ''
+                                    puerta: '',
+                                    entrecalles: ''
                                 }}
                                 onSubmit={generarOrden}
                                 validationSchema={schema}

@@ -17,10 +17,9 @@ export const ItemListContainer = () => {
     useEffect(() => {
         setLoading(true);
 
-        // 1. Armar la referencia
         const productosRef = collection(db, "productos")
         const q = idCategory ? query(productosRef, where("category", "==", idCategory)) : productosRef
-        // 2. (async) Llamar a Firebase con la referencia anterior
+
         getDocs(q)
             .then((resp) => {
                 const newItems = resp.docs.map((doc) => {
@@ -29,7 +28,6 @@ export const ItemListContainer = () => {
                         ...doc.data()
                     }
                 })
-                console.log(newItems)
                 setItems(newItems)
             })
             .finally(() => {
