@@ -18,8 +18,9 @@ En el directorio del proyecto, la app se ejecuta con npm start, previa instalaci
 
 Las librerías se instalan por medio de npm con los siguientes comandos:
 - **React Router Dom**: 
-`npm install react-router-dom`
 https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installation
+````npm install react-router-dom````
+
 
 - **React Bootstrap**: 
 `npm install react-bootstrap bootstrap`
