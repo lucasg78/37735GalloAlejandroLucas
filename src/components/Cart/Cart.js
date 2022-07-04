@@ -41,7 +41,7 @@ const Cart = () => {
           <tbody>
             <tr className="tableRows">
               <td className="text-start detail tdItem">{item.name}</td>
-              <td className="text-center detail tdResto"><PriceFormat price={item.price}/></td>
+              <td className="text-center detail tdResto"><PriceFormat price={item.price} /></td>
               <td className="text-center detail tdResto">{item.cantidad}</td>
               <td className="text-center detail tdResto"><PriceFormat price={item.price * item.cantidad} /></td>
               <td className="text-center tdTrash">
