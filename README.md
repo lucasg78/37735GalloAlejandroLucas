@@ -37,8 +37,8 @@ Instalación de librerías y plataformas:
 
 
 Para loguearse a la aplicación, se deben utilizar los siguientes datos:
-E-mail: alejandro.lucas@gallo.com
-Contraseña: gallo123
+- E-mail: alejandro.lucas@gallo.com
+- Contraseña: gallo123
 
 ## Recorrido virtual en video
 
