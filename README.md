@@ -2,7 +2,7 @@
 
 ## Acerca de la app
 
-Este proyecto se realizó en el marco del curso de React JS dictado por Coderhouse y consistió en el desarrollo de la tienda online de la empresa "Ahumadero Ushuaia". Consta de una página principal, donde se incluyen todos los productos en oferta, y tres secciones en las cuales se agrupan en categorías. Además, se incorporó un Checkout, donde se consignan los datos del cliente, el resumen del pedido y un formulario para agregar los datos de envío.
+Este proyecto se realizó en el marco del curso de React JS dictado por Coderhouse y consistió en el desarrollo de la tienda online de la empresa "Ahumadero Ushuaia". Consta de una página principal, donde se incluyen todos los productos del catálogo, y tres secciones donde se los agrupa en categorías. Además, contiene un Checkout, donde se consignan los datos del cliente, el resumen del pedido y un formulario para agregar los datos de envío.
 
 ## Características y herramientas
 
@@ -14,7 +14,7 @@ Alejandro Lucas Gallo - Julio 2022
 
  ## Ejecución
 
-En el directorio del proyecto, la app se ejecuta con npm start, visualizándola en http://localhost:3000 en el navegador. La página se refrescará automáticamente cuando se guarden los cambios. 
+En el directorio del proyecto, la app se ejecuta con npm start, previa instalación de npm. La ruta para visualizarla en el navegador es http://localhost:3000, donde la página se refrescará automáticamente cada vez que se guarden los cambios realizados en el código. 
 
 ## Recorrido virtual en video
 
@@ -25,4 +25,4 @@ https://ahumaderoushuaia.vercel.app/
 
 
 ## Agradecimientos
-Agredezco a Coderhouse por desarrollar este curso y ofrecer la posibilidad de acceder a la beca, haciendo accesible para todos el aprendizaje de la herramienta. También, al profesor Conrado Lanusse, por su forma tan clara y práctica de explicar los conceptos y por su dedicación y compromiso con el grupo. Finalmente, al tutor José Armando Pérez Pérez, por acompañarme con paciencia y dedicación en este proceso, brindando soporte en forma permanente y respondiendo todas las consultas.
+Agradezco a Coderhouse por desarrollar este curso y ofrecer la posibilidad de acceder a la beca, haciendo accesible para todos el aprendizaje de la herramienta. También, al profesor Conrado Lanusse, por su forma tan clara, práctica y amena de explicar los conceptos y por su compromiso con el grupo. Finalmente, al tutor José Armando Pérez Pérez, por acompañarme con paciencia y comprensión en este proceso, brindando soporte en forma permanente y respondiendo todas las consultas.
