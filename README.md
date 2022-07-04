@@ -16,30 +16,25 @@ Alejandro Lucas Gallo - Julio 2022
 
 En el directorio del proyecto, la app se ejecuta con npm start, previa instalación de npm. La ruta para visualizarla en el navegador es http://localhost:3000, donde la página se refrescará automáticamente cada vez que se guarden los cambios realizados en el código. 
 
-Las librerías se instalan por medio de npm con los siguientes comandos:
+Instalación de librerías y plataformas:
 - [**React Router Dom**](https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installatio)
 `npm install react-router-dom`
 
-
-- **React Bootstrap**: 
+- [**React Bootstrap**](https://react-bootstrap.github.io/getting-started/introduction/) 
 `npm install react-bootstrap bootstrap`
-https://react-bootstrap.github.io/getting-started/introduction/ 
 
-- **React Icons**:
-https://react-icons.github.io/react-icons/
+- [**React Icons**](https://react-icons.github.io/react-icons/)
 `npm install react-icons`
 
-- **Formik**: 
+- [**Formik**](https://formik.org/docs/overview) 
 `npm install formik`
-https://formik.org/docs/overview
 
-- **Yup**: 
+- [**Yup**](https://www.npmjs.com/package/yup) 
 `npm install -S yup`
-https://www.npmjs.com/package/yup
 
-- **Firebase**: 
+- [**Firebase**](https://firebase.google.com/docs/web/setup) 
 `npm install firebase`
-https://firebase.google.com/docs/web/setup
+
 
 Para loguearse a la aplicación, se deben utilizar los siguientes datos:
 E-mail: alejandro.lucas@gallo.com
