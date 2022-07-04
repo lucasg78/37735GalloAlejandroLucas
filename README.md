@@ -24,9 +24,10 @@ https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installati
 https://react-bootstrap.github.io/getting-started/introduction/ 
 
 - React Icons: 
-```bash
-npm install react-icons     # Lsassss
+`npm install react-icons`
 https://react-icons.github.io/react-icons/
+
+
 
 - Formik: npm install formik
 https://formik.org/docs/overview
