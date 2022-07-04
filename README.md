@@ -17,9 +17,8 @@ Alejandro Lucas Gallo - Julio 2022
 En el directorio del proyecto, la app se ejecuta con npm start, previa instalación de npm. La ruta para visualizarla en el navegador es http://localhost:3000, donde la página se refrescará automáticamente cada vez que se guarden los cambios realizados en el código. 
 
 Las librerías se instalan por medio de npm con los siguientes comandos:
-- **React Router Dom**: 
-https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installation
-````npm install react-router-dom````
+- [**React Router Dom**](https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installatio)
+`npm install react-router-dom`
 
 
 - **React Bootstrap**: 
