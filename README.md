@@ -4,7 +4,7 @@
 
 ## Acerca de la app
 
-El proyecto se realizó en el marco del curso de React JS dictado por Coderhouse y consistió en el desarrollo de la tienda online de la empresa **Ahumadero Ushuaia**. Consta de una página principal, donde se incluyen todos los productos del catálogo, y tres secciones para agruparlos en categorías. Para cada item, se puede acceder al detalle, que incluye una imagen con zoom, el precio unitario y el stock disponible. Al seleccionar la cantidad deseada de cada item, se puede optar por agregarla al carrito y seguir comprando, o ir directamente al detalle del carrito, donde se presenta el contenido y se pueden borrar items (individualmente o todos juntos) o ir al Checkout, donde se corroboran los datos personales y el resumen del pedido y se accede a un formulario para agregar los datos de envío. Finalmente, se puede confirmar la compra, obteniendo un número de orden generado automáticamente y volviendo al inicio, o cancelarla, lo cual vacía al carrito y también redirige al inicio. Allí, se puede optar por realizar otra compra o desloguearse de la aplicación.
+El proyecto se realizó en el marco del curso de React JS dictado por Coderhouse y consistió en el desarrollo de la tienda online de la empresa **Ahumadero Ushuaia**. Consta de una página principal, donde se incluyen todos los productos del catálogo, y tres secciones para agruparlos en categorías. Para cada item, se puede acceder al detalle, que incluye una imagen con zoom, el precio unitario y el stock disponible. Al seleccionar la cantidad deseada de cada item, se puede optar por agregarla al carrito y seguir comprando, o ir directamente al detalle del carrito, donde se presenta el contenido y se pueden borrar items (individualmente o todos juntos) o ir al Checkout, donde se corroboran los datos personales y el resumen del pedido y se accede a un formulario para agregar los datos de envío. Finalmente, se puede confirmar la compra, obteniendo un número de orden generado automáticamente y volviendo al inicio, o cancelarla, lo cual vacía al carrito y también redirige al inicio. Allí, se puede optar por realizar otra compra o por desloguearse de la aplicación.
 
 ---
 
@@ -22,7 +22,7 @@ Alejandro Lucas Gallo - Julio 2022
 
  ## Ejecución
 
-En el directorio del proyecto, la app se ejecuta con npm start, previa instalación de npm. La ruta para visualizarla en el navegador es http://localhost:3000, donde la página se refrescará automáticamente cada vez que se guarden los cambios realizados en el código. 
+En el directorio del proyecto, la app se ejecuta con `npm start` luego de instalar [npm](https://www.npmjs.com/) con `npm install`. La ruta para visualizarla en el navegador es http://localhost:3000, donde la página se refrescará automáticamente cada vez que se guarden los cambios realizados en el código. 
 
 Instalación de librerías y plataformas:
 - [**React Router Dom**](https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installatio): `npm install react-router-dom`
