@@ -3,7 +3,7 @@ import { CardGroup, Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ItemCount } from "./ItemCount";
+import { ItemCount } from "../ItemCount/ItemCount";
 import "./ItemDetail.scss";
 import { CartContext } from "../../context/CartContext";
 import PriceFormat from "../PriceFormat/PriceFormat";

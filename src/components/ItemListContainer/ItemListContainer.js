@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import ItemList from "./ItemList";
+import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.scss";
 import Loader from "../Loader/Loader"
 import { useProductos } from "./useProductos";

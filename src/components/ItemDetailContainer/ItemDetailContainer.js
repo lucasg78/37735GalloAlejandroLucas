@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react"
 import Loader from "../Loader/Loader"
 import { useParams } from "react-router-dom"
-import ItemDetail from "./ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase/config"
 
