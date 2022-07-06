@@ -48,7 +48,7 @@ Datos para loguearse a la aplicación por primera vez:
 ---
 
 ## Recorrido virtual en video
-
+https://youtu.be/Hn0Fp4YI4Tc
 
 ---
 
