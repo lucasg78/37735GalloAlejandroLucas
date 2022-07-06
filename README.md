@@ -10,7 +10,7 @@ El proyecto se realizó en el marco del curso de React JS dictado por Coderhouse
 
 ## Características y herramientas
 
-La aplicación se desarrolló utilizando los componentes de React JS con los hooks `useState`, `useEffect` y `useContext` y el custom hook `useProductos`. Además, se creó un context con la herramienta `createContext` para compartir información global para ciertos componentes, como `authContext` para el cliente autenticado y `cartContext` para el carrito que está utilizando dicho cliente. Por otro lado, se utilizó React Router Dom para gestionar las rutas y se implementó React Bootstrap para el estilado de algunos elementos, React Icons para añadir íconos, Formik para el formulario de confirmación de la compra, Yup para analizar y validar los datos de dicho formulario, Sweet Alert para generar cuadros de diálogo más atractivos visualmente, React Number Format para introducir el separador de miles en los importes y Firebase para alojar la base de datos en Cloud Firestore y así poder sincronizarla en tiempo real. Con el objetivo de administrar las diferentes versiones del proyecto, se utilizó el sistema Git, mientras que el repositorio con toda la documentación del proyecto se creó en el sitio GitHub. 
+La aplicación se desarrolló utilizando los componentes de React JS con los hooks `useState`, `useEffect` y `useContext` y el custom hook `useProductos`. Además, se creó un context con la herramienta `createContext` para compartir información global para ciertos componentes, como `authContext` para el cliente autenticado y `cartContext` para el carrito que está utilizando dicho cliente. Por otro lado, se utilizó React Router Dom para gestionar las rutas y se implementó React Bootstrap para el estilado de algunos elementos, React Icons para añadir íconos, Formik para el formulario de confirmación de la compra, Yup para analizar y validar los datos de dicho formulario, Sweet Alert para generar cuadros de diálogo más atractivos visualmente, React Number Format para introducir el separador de miles en los importes y Firebase para alojar las imágenes en Storage y la base de datos en Cloud Firestore, sincronizando el stock de los productos en tiempo real. Con el objetivo de administrar las diferentes versiones del proyecto se utilizó el sistema Git, mientras que el repositorio con toda la documentación se creó en GitHub. 
 
 ---
 
@@ -41,7 +41,7 @@ Instalación de librerías y plataformas:
 
 - [**Firebase**](https://firebase.google.com/docs/web/setup): `npm install firebase`
 
-Para loguearse a la aplicación, se deben utilizar los siguientes datos:
+Datos para loguearse a la aplicación por primera vez:
 - E-mail: alejandro.lucas@gallo.com
 - Contraseña: gallo123
 

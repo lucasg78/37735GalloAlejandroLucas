@@ -100,7 +100,7 @@ const Checkout = () => {
         Swal.fire({
             icon: "success",
             title: "¡Gracias por su compra!",
-            text: `Su número de orden es: ${orderId}`,
+            text: `Código de seguimiento: ${orderId}`,
         });
     }
 
