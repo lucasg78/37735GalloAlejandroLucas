@@ -59,6 +59,6 @@ https://ahumaderoushuaia.vercel.app/
 ---
 
 ## Agradecimientos
-Agradezco a Coderhouse por desarrollar este curso y ofrecer la posibilidad de acceder a la beca, haciendo accesible para todos el aprendizaje de la herramienta. También, al profesor Conrado Lanusse, por su forma tan clara, práctica y amena de explicar los conceptos y por su compromiso con el grupo. Finalmente, al tutor José Armando Pérez Pérez, por acompañarme con paciencia y comprensión en este proceso, brindando soporte en forma permanente y respondiendo a todas las consultas.
+Agradezco a Coderhouse por desarrollar este curso y ofrecer la posibilidad de acceder a la beca, haciendo accesible para todos el aprendizaje de la herramienta. Al profesor Conrado Lanusse, por su forma tan clara, práctica y amena de explicar los conceptos y por su compromiso con el grupo. Finalmente, al tutor José Armando Pérez Pérez, por acompañarme con paciencia y comprensión en este proceso, brindando soporte en forma permanente y respondiendo a todas las consultas.
 
 ---
